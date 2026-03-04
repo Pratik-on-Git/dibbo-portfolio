@@ -3,7 +3,13 @@ import { useLenis } from "lenis/react";
 
 const lerp = (start, end, factor) => start + (end - start) * factor;
 
-const ParallaxImage = ({ src, alt }) => {
+const ParallaxImage = ({
+  src,
+  alt,
+  speed = 0.2,
+  scale = 1.5,
+  className = "",
+}) => {
   const imageRef = useRef(null);
   const bounds = useRef(null);
   const currentTranslateY = useRef(0);
@@ -35,7 +41,7 @@ const ParallaxImage = ({ src, alt }) => {
         if (
           Math.abs(currentTranslateY.current - targetTranslateY.current) > 0.01
         ) {
-          imageRef.current.style.transform = `translateY(${currentTranslateY.current}px) scale(1.5)`;
+          imageRef.current.style.transform = `translateY(${currentTranslateY.current}px) scale(${scale})`;
         }
       }
       rafId.current = requestAnimationFrame(animate);
@@ -54,7 +60,7 @@ const ParallaxImage = ({ src, alt }) => {
   useLenis(({ scroll }) => {
     if (!bounds.current) return;
     const relativeScroll = scroll - bounds.current.top;
-    targetTranslateY.current = relativeScroll * 0.2;
+    targetTranslateY.current = relativeScroll * speed;
   });
 
   return (
@@ -62,9 +68,10 @@ const ParallaxImage = ({ src, alt }) => {
       ref={imageRef}
       src={src}
       alt={alt}
+      className={className}
       style={{
         willChange: "transform",
-        transform: "translateY(0) scale(1.5)",
+        transform: `translateY(0) scale(${scale})`,
       }}
     />
   );

@@ -35,7 +35,7 @@
   position: relative;
   display: flex;
   gap: 1em;
-  padding: 0.5em 1em 0.75em 1em;
+  padding: 0.5em 1em 0.5em 1em;
   background-color: var(--color-dark);
 }
 
@@ -101,7 +101,7 @@
 
 .feature-title p {
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf';
   font-size: 24px;
   font-weight: 300;
 }
@@ -148,6 +148,7 @@ section.rights {
   position: relative;
   width: 100vw;
   color: var(--color-dark);
+  background-color: var(--color-accent);
   text-align: center;
   padding: 4em 1em;
 }
@@ -270,5 +271,37 @@ section.rights {
 
   .solutions-hero-img div {
     transform: scale(3);
+  }
+
+  /* Mobile: center and enlarge hero title; make bottom text smaller */
+  .solutions-hero-header {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    text-align: center;
+  }
+
+  .solutions-hero-header h1 {
+    font-size: 36vw;
+    line-height: 0.9;
+    margin: 0;
+    color: var(--color-accent);
+  }
+
+  .solutions-hero-info p {
+    font-size: 18px;
+  }
+
+  .solutions-hero-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 1.5em;
   }
 }

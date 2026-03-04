@@ -33,7 +33,7 @@ section.updates-hero {
 
 .filter p {
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf';
   font-size: 30px;
   color: var(--color-dark);
 }
@@ -89,7 +89,7 @@ section.updates-hero {
 
 .article-link a {
   color: var(--color-accent);
-  font-family: "FK Screamer";
+  font-family: 'Rolf';
   font-size: 24px;
   font-weight: 300;
 }

@@ -62,7 +62,7 @@ section.contact-hero {
 .join-our-team p.primary,
 .careers-cta p a,
 .submit-btn p a {
-  font-family: "FK Screamer";
+  font-family: 'Rolf';
   font-size: 36px;
   margin-bottom: 0.5em;
 }
@@ -92,7 +92,7 @@ section.contact-hero {
 
 .careers-cta p a,
 .submit-btn p a {
-  font-family: "FK Screamer";
+  font-family: 'Rolf';
   font-size: 28px;
   color: var(--color-accent);
 }
@@ -130,7 +130,7 @@ section.contact-hero {
   outline: none;
   padding: 0.35em;
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf';
   font-size: 24px;
   font-weight: 300;
   color: var(--color-dark);
@@ -140,7 +140,7 @@ section.contact-hero {
 .form-item input::placeholder,
 .form-item textarea::placeholder {
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf';
   color: var(--color-dark);
 }
 

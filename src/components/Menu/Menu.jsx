@@ -43,7 +43,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
         opacity: 0,
       });
       setIsOpen(false);
-    }, 1000);
+    }, 750);
 
     return () => {
       if (navigationTimeoutRef.current) {

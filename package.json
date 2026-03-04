@@ -1,7 +1,7 @@
 {
-  "name": "balanced-pitch",
+  "name": "dibbo-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,14 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@studio-freight/react-lenis": "^0.0.47",
+    "@tailwindcss/vite": "^4.2.1",
     "framer-motion": "^11.11.17",
     "gsap": "^3.12.5",
     "lenis": "^1.1.17",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.0.1",
-    "react-router-dom": "^7.0.1"
+    "react-router-dom": "^7.0.1",
+    "split-type": "^0.3.4",
+    "tailwindcss": "^4.2.1",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",

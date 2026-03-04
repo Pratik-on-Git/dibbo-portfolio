@@ -1,43 +1,58 @@
-:root {
-  --color-accent: #d6ff62;
-  --color-light: #fff;
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #e61e32;
+  --color-light: #ffffff;
   --color-dark: #1d1d1d;
+  --font-rolf: "Rolf", "DM Sans", sans-serif;
 }
 
-@font-face {
-  font-family: "FK Screamer";
-  font-weight: 300;
-  src: url("./assets/fonts/fk-screamer.ttf") format("truetype");
+@layer components {
+  a.bp-btn {
+    @apply inline-flex cursor-pointer items-center justify-center bg-accent px-4 pb-[0.72em] pt-[0.45em] font-rolf text-[28px] font-light uppercase leading-none text-dark no-underline;
+    letter-spacing: 0.02em;
+  }
+
+  a.bp-btn.bp-btn-full {
+    @apply w-full;
+  }
+
+  a.bp-btn.bp-btn-dark {
+    @apply !bg-dark text-light;
+  }
 }
 
-@font-face {
-  font-family: "PP Editorial New";
-  font-weight: 200;
-  src: url("./assets/fonts/pp-editorial-new-thin.ttf") format("truetype");
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
-@font-face {
-  font-family: "PP Editorial New";
-  font-weight: 300;
-  src: url("./assets/fonts/pp-editorial-new-ultralight.ttf") format("truetype");
+:root {
+  overflow-x: hidden;
 }
 
+/* Rolf font-face definitions (paths relative to src/index.css) */
 @font-face {
-  font-family: "PP Editorial New";
-  font-weight: 500;
-  src: url("./assets/fonts/pp-editorial-new-regular.ttf") format("truetype");
+  font-family: 'Rolf';
+  src: url('./assets/fonts/Rolf-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
-
 @font-face {
-  font-family: "PP Editorial New";
-  font-weight: 700;
-  src: url("./assets/fonts/pp-editorial-new-bold.ttf") format("truetype");
+  font-family: 'Rolf';
+  src: url('./assets/fonts/Rolf-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
-
 @font-face {
-  font-family: "PP Editorial New";
-  font-weight: 800;
-  src: url("./assets/fonts/pp-editorial-new-heavy.ttf") format("truetype");
+  font-family: 'Rolf';
+  src: url('./assets/fonts/Rolf-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
 }
 
 * {
@@ -54,7 +69,7 @@ img {
 
 h1 {
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 16vw;
   font-weight: 300;
   line-height: 0.8;
@@ -62,7 +77,7 @@ h1 {
 
 h2 {
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 12vw;
   font-weight: 300;
   line-height: 0.8;
@@ -70,7 +85,7 @@ h2 {
 
 h3 {
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 4vw;
   font-weight: 300;
   line-height: 0.9;
@@ -78,7 +93,7 @@ h3 {
 
 p.primary {
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 24px;
   font-weight: 300;
   line-height: 1;
@@ -88,7 +103,7 @@ p,
 span,
 a {
   text-decoration: none;
-  font-family: "PP Editorial New";
+  font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.15;
@@ -99,16 +114,27 @@ button {
   border: none;
   outline: none;
   box-shadow: none;
-  padding: 0.5em 1em 0.75em 1em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45em 1em 0.72em;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: top;
   background-color: var(--color-accent) !important;
 }
 
 button a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--color-dark);
   text-transform: uppercase;
-  font-family: "FK Screamer";
+  font-family: 'Rolf', 'DM Sans', sans-serif;
   font-weight: 300;
   font-size: 28px;
+  line-height: 1;
 }
 
 .page {
