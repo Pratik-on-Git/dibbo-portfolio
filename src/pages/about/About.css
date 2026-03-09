@@ -358,6 +358,77 @@ section.team {
   color: var(--color-dark);
 }
 
+.page.about section.contact-banner {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--color-light);
+}
+
+.page.about .contact-banner-col:nth-child(1) {
+  position: relative;
+  flex: 3;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.page.about .contact-banner-col:nth-child(2) {
+  position: relative;
+  flex: 2;
+}
+
+.page.about .contact-banner-col p {
+  color: var(--color-dark);
+  font-family: var(--font-body);
+  line-height: 1.35;
+  white-space: normal;
+}
+
+.page.about .contact-banner-img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page.about .contact-banner-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  color: var(--color-dark);
+}
+
+.page.about .contact-banner-header p.primary {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.page.about .contact-banner-header h2 {
+  font-size: 8em;
+  line-height: 1.5;
+  color: var(--color-accent);
+}
+
+.page.about .banner-contact p.primary {
+  margin-bottom: 0.25em;
+}
+
+.page.about .banner-info {
+  width: 75%;
+  margin: 0 auto;
+}
+
 .service-row {
   display: flex;
   gap: 4em;
@@ -466,5 +537,10 @@ section.team {
 
   .service-title h3 {
     font-size: 10vw;
+  }
+
+  .page.about section.contact-banner {
+    flex-direction: column-reverse;
+    min-height: 175vh;
   }
 }
