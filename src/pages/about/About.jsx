@@ -155,12 +155,12 @@ const About = () => {
           <div className="about-us-col">
             <h3>Crafting music that moves souls and defines the sound of a generation.</h3>
             <p>
-              Hi! I'm Dibyojyoti Biswas - known as Dibbo, a session guitarist, live performer, and composer driven by a deep love for sound and storytelling through music. Over the years, I've collaborated with artists across different genres, bringing a thoughtful ear for tone, texture, and feel to every project I'm part of.
+              Hi! I&apos;m Dibyojyoti Biswas - known as Dibbo, a session guitarist, live performer, and composer driven by a deep love for sound and storytelling through music. Over the years, I've collaborated with artists across different genres, bringing a thoughtful ear for tone, texture, and feel to every project I'm part of.
             <br />
               From intimate acoustic moments to high-energy live performances, I aim to create guitar work that feels honest, expressive, and alive.
             </p>
             <p>
-              Beyond performing, I'm passionate about sharing the craft with the next generation of musicians, mentoring guitarists and encouraging them to find their own voice. For me, music isn't just about playing notes — it's about creating moments that connect, inspire, and stay with people long after the last chord fades.
+              Beyond performing, I&apos;m passionate about sharing the craft with the next generation of musicians, mentoring guitarists and encouraging them to find their own voice. For me, music isn't just about playing notes — it's about creating moments that connect, inspire, and stay with people long after the last chord fades.
             </p>
 
             <div className="about-us-cta">

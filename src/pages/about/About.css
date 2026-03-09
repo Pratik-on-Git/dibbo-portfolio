@@ -179,8 +179,8 @@ section.team {
 
 .team-header h1 {
   position: relative;
-  top: -0.175em;
-  font-size: 21vw;
+  top: 0.20em;
+  font-size: 16vw;
   line-height: 1;
 }
 
@@ -188,6 +188,7 @@ section.team {
   padding: 1em;
   color: var(--color-dark);
   background-color: var(--color-accent);
+  margin-top: 9em;
 }
 
 .join-team-card h3 {
