@@ -44,7 +44,7 @@ const About = () => {
 
     // --- About Us section (scroll triggered) ---
     const signUpH3 = page.querySelector(".sign-up-card-header h3");
-    cleanups.push(animateTextReveal(signUpH3));
+    cleanups.push(animateSimpleReveal(signUpH3));
 
     const signUpP = page.querySelector(".sign-up-card-header p");
     cleanups.push(animateSimpleReveal(signUpP, { delay: 0.1 }));
@@ -52,7 +52,7 @@ const About = () => {
     const aboutCol2 = page.querySelector(".about-us-col:nth-child(2)");
     if (aboutCol2) {
       const aboutH3 = aboutCol2.querySelector("h3");
-      cleanups.push(animateTextReveal(aboutH3));
+      cleanups.push(animateSimpleReveal(aboutH3));
 
       const aboutParas = aboutCol2.querySelectorAll(":scope > p");
       aboutParas.forEach((p, i) => {
