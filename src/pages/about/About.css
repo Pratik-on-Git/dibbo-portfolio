@@ -269,7 +269,7 @@ section.team {
   overflow: hidden;
   white-space: nowrap;
   background: var(--color-accent);
-  padding: 0.2rem 0 1.5em 0;
+  padding: 2rem 0 1.5em 0;
 }
 
 .marquee {
@@ -280,6 +280,7 @@ section.team {
 .marquee h1 {
   display: inline-block;
   margin-right: 50px;
+  font-size: 4rem;
   color: var(--color-dark);
 }
 
