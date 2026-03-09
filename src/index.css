@@ -9,8 +9,16 @@
 
 @layer components {
   a.bp-btn {
-    @apply inline-flex cursor-pointer items-center justify-center bg-accent px-4 pb-[0.72em] pt-[0.45em] font-rolf text-[28px] font-light uppercase leading-none text-dark no-underline;
+    @apply inline-flex cursor-pointer items-center justify-center bg-accent px-4 pb-[0.72em] pt-[0.45em] font-rolf text-[28px] font-light uppercase text-dark no-underline;
     letter-spacing: 0.02em;
+    line-height: 1.04;
+    white-space: nowrap;
+  }
+
+  a.bp-btn .bp-btn-label {
+    display: inline-block;
+    line-height: 1;
+    transform: translateY(0.02em);
   }
 
   a.bp-btn.bp-btn-full {
@@ -106,7 +114,7 @@ a {
   font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.15;
+  line-height: normal;
 }
 
 button {

@@ -20,7 +20,7 @@ const CtaButton = ({
 
   return (
     <Link to={to} className={classes}>
-      {children}
+      <span className="bp-btn-label">{children}</span>
     </Link>
   );
 };

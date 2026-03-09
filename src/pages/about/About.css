@@ -189,6 +189,8 @@ section.team {
   color: var(--color-dark);
   background-color: var(--color-accent);
   margin-top: 9em;
+  display: flex;
+  flex-direction: column;
 }
 
 .join-team-card h3 {
@@ -197,10 +199,21 @@ section.team {
 
 .join-team-card p {
   margin-bottom: 2em;
+  margin-top: 1.5em;
+  font-family: "PP Editorial New";
 }
 
-.join-team-card .bp-btn {
-  width: fit-content;
+.join-team-card .join-team-cta {
+  margin-top: auto;
+  width: 100%;
+}
+
+.join-team-card .join-team-cta .bp-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  padding-top: 0.8rem;
 }
 
 .team-list {

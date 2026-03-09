@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/Menu/Menu";
@@ -13,6 +13,7 @@ import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
+  const isInitialRender = useRef(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isDarkMenu = location.pathname === "/updates";
 
@@ -29,9 +30,12 @@ function App() {
     const currentTitle = pageTitles[location.pathname] || "Aiden Brooks";
     document.title = currentTitle;
 
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 750);
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+      return;
+    }
+
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
