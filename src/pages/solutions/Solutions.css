@@ -1,6 +1,6 @@
 .solutions-hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -41,6 +41,8 @@
 
 .solutions-hero-info p {
   font-size: 28px;
+  font-family: var(--font-body);
+  line-height: 1.3;
   color: var(--color-accent);
 }
 
@@ -87,7 +89,7 @@
   font-style: italic;
   transform: rotate(-10deg);
   text-align: center;
-  line-height: 0.8;
+  line-height: 0.92;
 }
 
 .features-copy {
@@ -101,9 +103,10 @@
 
 .feature-title p {
   text-transform: uppercase;
-  font-family: 'Rolf';
+  font-family: var(--font-rolf);
   font-size: 24px;
   font-weight: 300;
+  line-height: 1.05;
 }
 
 .feature-title p:nth-child(1) {
@@ -116,7 +119,7 @@
 
 .solutions-callout {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 125vh;
   overflow: hidden;
 }
@@ -142,11 +145,13 @@
 
 .callout-copy p {
   width: 85%;
+  font-family: var(--font-body);
+  line-height: 1.4;
 }
 
 section.rights {
   position: relative;
-  width: 100vw;
+  width: 100%;
   color: var(--color-dark);
   background-color: var(--color-accent);
   text-align: center;
@@ -171,11 +176,13 @@ section.rights {
 .rights p {
   width: 35%;
   margin: 1em auto;
+  font-family: var(--font-body);
+  line-height: 1.4;
 }
 
 .rights-list {
   position: relative;
-  width: 100vw;
+  width: 100%;
   display: flex;
   color: var(--color-light);
 }
@@ -206,6 +213,8 @@ section.rights {
 .right-desc-line {
   padding: 1em 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+  font-family: var(--font-body);
+  line-height: 1.35;
 }
 
 .right-desc .right-desc-line:last-child {

@@ -58,7 +58,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
 }
 
 .fxl-progress-track {

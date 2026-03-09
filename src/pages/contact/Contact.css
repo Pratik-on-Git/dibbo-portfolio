@@ -1,6 +1,6 @@
 section.contact-hero {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 175vh;
   display: flex;
   flex-direction: column;
@@ -62,8 +62,9 @@ section.contact-hero {
 .join-our-team p.primary,
 .careers-cta p a,
 .submit-btn p a {
-  font-family: 'Rolf';
+  font-family: var(--font-rolf);
   font-size: 36px;
+  line-height: 1.05;
   margin-bottom: 0.5em;
 }
 
@@ -77,6 +78,8 @@ section.contact-hero {
 
 .join-our-team p {
   color: var(--color-light);
+  font-family: var(--font-body);
+  line-height: 1.35;
 }
 
 .divider {
@@ -92,8 +95,9 @@ section.contact-hero {
 
 .careers-cta p a,
 .submit-btn p a {
-  font-family: 'Rolf';
+  font-family: var(--font-rolf);
   font-size: 28px;
+  line-height: 1;
   color: var(--color-accent);
 }
 
@@ -130,9 +134,10 @@ section.contact-hero {
   outline: none;
   padding: 0.35em;
   text-transform: uppercase;
-  font-family: 'Rolf';
+  font-family: var(--font-body);
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 500;
+  line-height: 1.3;
   color: var(--color-dark);
   background-color: var(--color-accent);
 }
@@ -140,7 +145,8 @@ section.contact-hero {
 .form-item input::placeholder,
 .form-item textarea::placeholder {
   text-transform: uppercase;
-  font-family: 'Rolf';
+  font-family: var(--font-body);
+  font-weight: 500;
   color: var(--color-dark);
 }
 
@@ -151,7 +157,7 @@ section.contact-hero {
 
 section.contact-banner {
   position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   background-color: var(--color-light);
@@ -170,6 +176,8 @@ section.contact-banner {
 
 .contact-banner-col p {
   color: var(--color-dark);
+  font-family: var(--font-body);
+  line-height: 1.35;
 }
 
 .contact-banner-col:nth-child(2) {
@@ -199,6 +207,7 @@ section.contact-banner {
 
 .contact-banner-header p.primary {
   font-size: 30px;
+  line-height: 1.1;
 }
 
 .banner-contact p.primary {
