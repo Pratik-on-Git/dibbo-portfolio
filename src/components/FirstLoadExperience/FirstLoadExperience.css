@@ -1,0 +1,111 @@
+.first-load-experience {
+  position: fixed;
+  inset: 0;
+  z-index: 22000;
+  overflow: hidden;
+  pointer-events: all;
+  background: #000;
+}
+
+.fxl-bg-noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.08) 0,
+      transparent 38%
+    ),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0, transparent 40%);
+  opacity: 0;
+}
+
+.fxl-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light);
+  text-align: center;
+}
+
+.fxl-title {
+  width: 100%;
+  padding: 0.2em 0;
+  overflow: visible;
+}
+
+.fxl-title-line {
+  font-size: clamp(3.25rem, 14vw, 14rem);
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-family: "Rolf", "DM Sans", sans-serif;
+  font-weight: 300;
+  will-change: transform, opacity, filter;
+  color: #f4f4f4;
+  margin: 0;
+  display: block;
+  overflow: visible;
+}
+
+.fxl-progress-wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+.fxl-progress-track {
+  height: 12px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.14);
+  overflow: hidden;
+}
+
+.fxl-progress-fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: var(--color-accent);
+  will-change: transform;
+}
+
+.fxl-meta {
+  margin-top: 0.7rem;
+  padding: 0 0.9rem 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.fxl-meta span {
+  text-transform: uppercase;
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.05em;
+}
+
+@media (max-width: 900px) {
+  .fxl-content {
+    padding: 1.25rem;
+  }
+
+  .fxl-title-line {
+    font-size: clamp(3rem, 16vw, 6rem);
+  }
+
+  .fxl-progress-track {
+    height: 10px;
+  }
+
+  .fxl-meta span {
+    font-size: 0.78rem;
+  }
+}

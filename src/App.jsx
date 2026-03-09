@@ -7,6 +7,7 @@ import About from "./pages/about/About";
 import Updates from "./pages/updates/Updates";
 import Solutions from "./pages/solutions/Solutions";
 import Contact from "./pages/contact/Contact";
+import FirstLoadExperience from "./components/FirstLoadExperience/FirstLoadExperience";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -16,7 +17,8 @@ function App() {
   const isDarkMenu = location.pathname === "/updates";
 
   const pageTitles = {
-    "/": "Dibbo | Portfolio",
+    "/": "About Us | Balanced Pitch | CG MWT NOV 2024",
+    "/home": "Dibbo | Portfolio",
     "/about": "About Us | Balanced Pitch | CG MWT NOV 2024",
     "/solutions": "Solutions | Balanced Pitch | CG MWT NOV 2024",
     "/updates": "Updates | Balanced Pitch | CG MWT NOV 2024",
@@ -34,10 +36,12 @@ function App() {
 
   return (
     <div className="app">
+      <FirstLoadExperience />
       <Menu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} isDark={isDarkMenu} />
       <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
-          <Route index element={<Home />} />
+          <Route index element={<About />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/updates" element={<Updates />} />
           <Route path="/solutions" element={<Solutions />} />
