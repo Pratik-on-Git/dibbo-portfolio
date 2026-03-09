@@ -5,6 +5,7 @@
   --color-light: #ffffff;
   --color-dark: #1d1d1d;
   --font-rolf: "Rolf", "DM Sans", sans-serif;
+  --font-body: "DM Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 @layer components {
@@ -13,6 +14,16 @@
     letter-spacing: 0.02em;
     line-height: 1.04;
     white-space: nowrap;
+  }
+
+  .bp-display {
+    font-family: var(--font-rolf);
+    line-height: 0.92;
+  }
+
+  .bp-text {
+    font-family: var(--font-body);
+    line-height: 1.35;
   }
 
   a.bp-btn .bp-btn-label {
@@ -49,18 +60,21 @@
   src: url('./assets/fonts/Rolf-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Rolf';
   src: url('./assets/fonts/Rolf-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Rolf';
   src: url('./assets/fonts/Rolf-Heavy.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -80,7 +94,7 @@ h1 {
   font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 16vw;
   font-weight: 300;
-  line-height: 0.8;
+  line-height: 0.88;
 }
 
 h2 {
@@ -88,7 +102,7 @@ h2 {
   font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 12vw;
   font-weight: 300;
-  line-height: 0.8;
+  line-height: 0.88;
 }
 
 h3 {
@@ -96,7 +110,7 @@ h3 {
   font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 4vw;
   font-weight: 300;
-  line-height: 0.9;
+  line-height: 0.95;
 }
 
 p.primary {
@@ -104,17 +118,17 @@ p.primary {
   font-family: 'Rolf', 'DM Sans', sans-serif;
   font-size: 24px;
   font-weight: 300;
-  line-height: 1;
+  line-height: 1.05;
 }
 
 p,
 span,
 a {
   text-decoration: none;
-  font-family: 'Rolf', 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 18px;
-  font-weight: 300;
-  line-height: normal;
+  font-weight: 400;
+  line-height: 1.35;
 }
 
 button {
