@@ -4,13 +4,12 @@ import Footer from "../../components/Footer/Footer";
 import Transition from "../../components/Transition/Transition";
 import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
 import CtaButton from "../../components/Button/CtaButton";
+import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
 import "./About.css";
-import { ReactLenis, useLenis } from "lenis/react";
 import animateTextReveal from "../../utils/animateTextReveal";
 import { animateAdvancedFadeIn, animateSimpleReveal } from "../../utils/animateTextReveal";
 
 const About = () => {
-  const lenis = useLenis(({ scroll }) => {});
   const pageRef = useRef(null);
 
   useEffect(() => {
@@ -111,8 +110,7 @@ const About = () => {
   }, []);
 
   return (
-    <ReactLenis root>
-      <div className="page about" ref={pageRef}>
+    <div className="page about" ref={pageRef}>
         <section className="solutions-hero about-hero">
           <div className="solutions-hero-img">
             <ParallaxImage
@@ -125,9 +123,6 @@ const About = () => {
           </div>
           <div className="solutions-hero-header about-hero-header">
             <h1>Dibbo</h1>
-            {/*<div className="stickers">
-              <img src="/stickers.png" alt="" />
-            </div>*/}
           </div>
           <div className="about-hero-info">
             <p>Session Guitarist | Live Performer | Composer | Creator | Educator</p>
@@ -155,12 +150,12 @@ const About = () => {
           <div className="about-us-col">
             <h3>Crafting music that moves souls and defines the sound of a generation.</h3>
             <p>
-              Hi! I&apos;m Dibyojyoti Biswas - known as Dibbo, a session guitarist, live performer, and composer driven by a deep love for sound and storytelling through music. Over the years, I've collaborated with artists across different genres, bringing a thoughtful ear for tone, texture, and feel to every project I'm part of.
+              Hi! I&apos;m Dibyojyoti Biswas - known as Dibbo, a session guitarist, live performer, and composer driven by a deep love for sound and storytelling through music. Over the years, I&apos;ve collaborated with artists across different genres, bringing a thoughtful ear for tone, texture, and feel to every project I&apos;m part of.
             <br />
               From intimate acoustic moments to high-energy live performances, I aim to create guitar work that feels honest, expressive, and alive.
             </p>
             <p>
-              Beyond performing, I&apos;m passionate about sharing the craft with the next generation of musicians, mentoring guitarists and encouraging them to find their own voice. For me, music isn't just about playing notes — it's about creating moments that connect, inspire, and stay with people long after the last chord fades.
+              Beyond performing, I&apos;m passionate about sharing the craft with the next generation of musicians, mentoring guitarists and encouraging them to find their own voice. For me, music isn&apos;t just about playing notes — it&apos;s about creating moments that connect, inspire, and stay with people long after the last chord fades.
             </p>
 
             <div className="about-us-cta">
@@ -169,9 +164,17 @@ const About = () => {
           </div>
         </section>
 
+        <section className="about-player-section">
+          <div className="about-player-header">
+            <p className="primary">Empowering Creativity. Redefining Sound.</p>
+            <p>Shaping the Future of Music with AI</p>
+          </div>
+          <MusicPlayer />
+        </section>
+
         <section className="team">
           <div className="team-bg">
-            <ParallaxImage src="/about/team-bg.jpg" alt="" />
+            <ParallaxImage src="/about/hero-1.png" alt="" />
           </div>
           <div className="team-header">
             <h3>The Creative</h3>
@@ -203,7 +206,6 @@ const About = () => {
                 </div>
                 <div className="player-info">
                   <h3>Alex Morgan</h3>
-                  <p>Drums & Rhythm Section</p>
                 </div>
                 <div className="player-desc">
                   <p>
@@ -228,7 +230,6 @@ const About = () => {
                 </div>
                 <div className="player-info">
                   <h3>Jordan Lee</h3>
-                  <p>Bass Guitar & Production</p>
                 </div>
                 <div className="player-desc">
                   <p>
@@ -254,7 +255,6 @@ const About = () => {
                 </div>
                 <div className="player-info">
                   <h3>Samantha Grey</h3>
-                  <p>Vocals & Songwriting</p>
                 </div>
                 <div className="player-desc">
                   <p>
@@ -278,7 +278,6 @@ const About = () => {
                 </div>
                 <div className="player-info">
                   <h3>Riley Bennett</h3>
-                  <p>Keys & Arrangements</p>
                 </div>
                 <div className="player-desc">
                   <p>
@@ -414,7 +413,7 @@ const About = () => {
           <div className="contact-banner-col">
             <div className="contact-banner-img">
               <ParallaxImage
-                src="/about/banner.jpg"
+                src="/about/team-bg.png"
                 alt="Balanced Pitch Banner"
               />
             </div>
@@ -422,8 +421,7 @@ const About = () => {
         </section>
 
         <Footer />
-      </div>
-    </ReactLenis>
+    </div>
   );
 };
 

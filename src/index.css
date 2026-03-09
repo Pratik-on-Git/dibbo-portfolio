@@ -9,13 +9,6 @@
 }
 
 @layer components {
-  a.bp-btn {
-    @apply inline-flex cursor-pointer items-center justify-center bg-accent px-4 pb-[0.72em] pt-[0.45em] font-rolf text-[28px] font-light uppercase text-dark no-underline;
-    letter-spacing: 0.02em;
-    line-height: 1.04;
-    white-space: nowrap;
-  }
-
   .bp-display {
     font-family: var(--font-rolf);
     line-height: 0.92;
@@ -24,20 +17,6 @@
   .bp-text {
     font-family: var(--font-body);
     line-height: 1.35;
-  }
-
-  a.bp-btn .bp-btn-label {
-    display: inline-block;
-    line-height: 1;
-    transform: translateY(0.02em);
-  }
-
-  a.bp-btn.bp-btn-full {
-    @apply w-full;
-  }
-
-  a.bp-btn.bp-btn-dark {
-    @apply !bg-dark text-light;
   }
 }
 
@@ -131,33 +110,7 @@ a {
   line-height: 1.35;
 }
 
-button {
-  position: relative;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.45em 1em 0.72em;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  vertical-align: top;
-  background-color: var(--color-accent) !important;
-}
 
-button a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-dark);
-  text-transform: uppercase;
-  font-family: 'Rolf', 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 28px;
-  line-height: 1;
-}
 
 .page {
   position: relative;
@@ -170,6 +123,54 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--color-dark);
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) transparent;
+}
+
+/* Scrollbar: 4px thumb only, transparent track, no arrows.
+   Based on https://stackoverflow.com/q/23200639 (CC BY-SA 4.0). */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background: transparent;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: transparent;
+  box-shadow: none;
+}
+
+html::-webkit-scrollbar-track-piece,
+body::-webkit-scrollbar-track-piece,
+*::-webkit-scrollbar-track-piece {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 999px;
+}
+
+html::-webkit-scrollbar-button,
+body::-webkit-scrollbar-button,
+*::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+html::-webkit-scrollbar-corner,
+body::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 @media (max-width: 900px) {

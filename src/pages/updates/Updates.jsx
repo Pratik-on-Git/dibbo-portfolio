@@ -5,14 +5,10 @@ import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
 
 import "./Updates.css";
 
-import { ReactLenis, useLenis } from "lenis/react";
 
 const Updates = () => {
-  const lenis = useLenis(({ scroll }) => {});
-
   return (
-    <ReactLenis root>
-      <div className="page updates">
+    <div className="page updates">
         <section className="updates-hero">
           <h1>Latest Updates</h1>
         </section>
@@ -78,7 +74,7 @@ const Updates = () => {
                 </div>
               </div>
               <div className="article-title">
-                <h3>Protecting Artists' Rights in the Age of AI</h3>
+                <h3>Protecting Artists&apos; Rights in the Age of AI</h3>
               </div>
               <div className="article-link">
                 <p className="primary">
@@ -198,8 +194,7 @@ const Updates = () => {
         </section>
 
         <Footer />
-      </div>
-    </ReactLenis>
+    </div>
   );
 };
 

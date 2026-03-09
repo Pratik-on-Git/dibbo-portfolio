@@ -49,28 +49,36 @@
   transform: none;
   pointer-events: none;
   z-index: 3;
+  flex-direction: column;
+  text-align: center;
+  padding: 0;
 }
 
 .page.about .solutions-hero-header.about-hero-header h1 {
-  margin: 0;
-  font-size: 20vw;
-  padding-bottom: 5%;
+  margin-bottom: 5rem;
+  font-size: clamp(4rem, 28vw, 18rem);
+  line-height: 0.88;
+  padding: 0;
 }
 
 .about-hero-info {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
   z-index: 3;
   display: flex;
-  gap: 1em;
-  padding: 0.5em 1em 0.5em 1em;
+  gap: 0;
   background: transparent;
+  white-space: nowrap;
 }
 
 .about-hero-info p {
   font-family: var(--font-body);
-  font-size: 28px;
+  font-size: 32px;
   line-height: 1.3;
   color: var(--color-accent);
+  white-space: nowrap;
 }
 
 .about-us {
@@ -132,7 +140,7 @@
 }
 
 .about-us-cta .bp-btn {
-  padding: 0.45em 1.1em 0.72em;
+  padding: 0.5em 0.8em;
 }
 
 .about-us-col:nth-child(2) h3 {
@@ -149,10 +157,41 @@
   line-height: 1.4;
 }
 
+.about-player-section {
+  width: 100%;
+  padding: 2.5rem 1rem 1.5rem;
+  text-align: center;
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.about-player-header {
+  width: min(860px, 92%);
+  margin: 0 auto 0.5rem;
+}
+
+.about-player-header p.primary {
+  margin-bottom: 0.2rem;
+}
+
+.about-player-header p {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.about-player-section .player-container {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.about-player-section .vinyl-container {
+  width: 40%;
+}
+
 section.team {
   position: relative;
   width: 100%;
-  padding: 8em 1em;
+  padding: 6em 1em;
   display: flex;
   gap: 4em;
   overflow: hidden;
@@ -231,11 +270,13 @@ section.team {
 
 .team-list-row {
   display: flex;
-  gap: 1em;
+  gap: 2em;
 }
 
 .team-player {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .player-img {
@@ -244,20 +285,31 @@ section.team {
   height: 600px;
 }
 
+.player-info {
+  padding: 0.75em 0.75em 0;
+}
+
 .player-info h3 {
   color: var(--color-light);
-  padding: 0.125em 0;
+  padding: 0;
+  margin-bottom: 0.3em;
 }
 
 .player-info p {
   color: var(--color-accent);
-  padding: 0.5em 0;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .player-desc {
   color: var(--color-light);
-  padding: 0.25em 0;
-  margin-bottom: 2em;
+  padding: 0.75em 0.75em 0;
+  margin-bottom: 0;
+}
+
+.player-social {
+  margin-top: auto;
+  padding: 0.75em 0.75em 0.75em;
 }
 
 .player-social a {
@@ -324,7 +376,7 @@ section.team {
 }
 
 .service-title h3 {
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 .service-title h3:nth-child(1) {
@@ -370,6 +422,18 @@ section.team {
 
   .about-us-col:nth-child(2) p {
     width: 90%;
+  }
+
+  .about-player-section {
+    padding: 2rem 0.5rem 1rem;
+  }
+
+  .about-player-header {
+    width: 94%;
+  }
+
+  .about-player-section .vinyl-container {
+    width: 82%;
   }
 
   section.team {

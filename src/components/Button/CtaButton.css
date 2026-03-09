@@ -1,0 +1,34 @@
+.bp-btn {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  padding: 0.2em 0rem 0.2em;
+  font-family: var(--font-rolf);
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  line-height: 1.04;
+  white-space: nowrap;
+}
+
+.bp-btn .bp-btn-label {
+  display: inline-block;
+  line-height: 1;
+  font-size: 26px;
+    font-weight: 500;
+  transform: translateY(0.02em);
+}
+
+.bp-btn.bp-btn-full {
+  width: 100%;
+}
+
+.bp-btn.bp-btn-dark {
+  background-color: var(--color-dark) !important;
+  color: var(--color-light);
+}

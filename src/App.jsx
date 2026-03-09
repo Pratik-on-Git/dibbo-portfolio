@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { ReactLenis, useLenis } from "lenis/react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
 import Menu from "./components/Menu/Menu";
 import Home from "./pages/home/Home";
@@ -11,7 +14,9 @@ import FirstLoadExperience from "./components/FirstLoadExperience/FirstLoadExper
 
 import { AnimatePresence } from "framer-motion";
 
-function App() {
+gsap.registerPlugin(ScrollTrigger);
+
+function AppContent() {
   const location = useLocation();
   const isInitialRender = useRef(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,6 +31,8 @@ function App() {
     "/contact": "Contact | Balanced Pitch | CG MWT NOV 2024",
   };
 
+  const lenis = useLenis(() => ScrollTrigger.update());
+
   useEffect(() => {
     const currentTitle = pageTitles[location.pathname] || "Aiden Brooks";
     document.title = currentTitle;
@@ -35,7 +42,7 @@ function App() {
       return;
     }
 
-    window.scrollTo(0, 0);
+    lenis?.scrollTo(0, { immediate: true });
   }, [location.pathname]);
 
   return (
@@ -53,6 +60,14 @@ function App() {
         </Routes>
       </AnimatePresence>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ReactLenis root>
+      <AppContent />
+    </ReactLenis>
   );
 }
 

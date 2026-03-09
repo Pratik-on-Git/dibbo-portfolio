@@ -5,14 +5,10 @@ import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
 
 import "./Solutions.css";
 
-import { ReactLenis, useLenis } from "lenis/react";
 
 const Solutions = () => {
-  const lenis = useLenis(({ scroll }) => {});
-
   return (
-    <ReactLenis root>
-      <div className="page solutions">
+    <div className="page solutions">
         <section className="solutions-hero about-hero">
           <div className="solutions-hero-img">
             <ParallaxImage src="/solutions/hero.jpg" alt="" />
@@ -288,8 +284,7 @@ const Solutions = () => {
         </section>
 
         <Footer />
-      </div>
-    </ReactLenis>
+    </div>
   );
 };
 

@@ -3,17 +3,14 @@ import { Link } from "react-router";
 import Footer from "../../components/Footer/Footer";
 import Transition from "../../components/Transition/Transition";
 import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
+import Button from "../../components/Button/Button";
 
 import "./Contact.css";
 
-import { ReactLenis, useLenis } from "lenis/react";
 
 const Contact = () => {
-  const lenis = useLenis(({ scroll }) => {});
-
   return (
-    <ReactLenis root>
-      <div className="page contact">
+    <div className="page contact">
         <section className="contact-hero">
           <div className="contact-hero-img">
             <ParallaxImage src="/contact/hero.jpg" alt="" />
@@ -35,9 +32,7 @@ const Contact = () => {
                 </p>
                 <p>Make Your Voice Count</p>
 
-                <button>
-                  <Link to="/contact">Sign Up</Link>
-                </button>
+                <Button to="/contact">Sign Up</Button>
               </div>
               <div className="form-details">
                 <div className="join-our-team">
@@ -129,8 +124,7 @@ const Contact = () => {
         </section>
 
         <Footer />
-      </div>
-    </ReactLenis>
+    </div>
   );
 };
 

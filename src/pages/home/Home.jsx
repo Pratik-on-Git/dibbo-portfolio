@@ -4,16 +4,14 @@ import Footer from "../../components/Footer/Footer";
 import Transition from "../../components/Transition/Transition";
 import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
 import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
+import Button from "../../components/Button/Button";
 
 import "./Home.css";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ReactLenis, useLenis } from "lenis/react";
 
 const Home = () => {
-  const lenis = useLenis(({ scroll }) => {});
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -35,8 +33,7 @@ const Home = () => {
   }, []);
 
   return (
-    <ReactLenis root>
-      <div className="page home">
+    <div className="page home">
         <section className="hero">
           <div className="hero-img">
             <ParallaxImage src="/home/hero.jpg" alt="" />
@@ -50,9 +47,7 @@ const Home = () => {
             <div className="stickers">
               <img src="/stickers.png" alt="" />
             </div>
-            <button>
-              <Link to="/contact">Get in touch</Link>
-            </button>
+            <Button to="/contact">Get in touch</Button>
           </div>
 
           <div className="news-article">
@@ -123,9 +118,7 @@ const Home = () => {
             </p>
 
             <div className="cover-cta">
-              <button>
-                <Link to="/">Our Mission</Link>
-              </button>
+              <Button to="/">Our Mission</Button>
             </div>
           </div>
         </section>
@@ -216,8 +209,7 @@ const Home = () => {
           </div>
         </section>
         <Footer />
-      </div>
-    </ReactLenis>
+    </div>
   );
 };
 

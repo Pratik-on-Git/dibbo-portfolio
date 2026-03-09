@@ -210,6 +210,11 @@ section.contact-banner {
   line-height: 1.1;
 }
 
+.contact-banner-header h2{
+  font-size: 8em;
+  line-height: 1.5;
+  color: var(--color-accent);
+}
 .banner-contact p.primary {
   margin-bottom: 0.25em;
 }

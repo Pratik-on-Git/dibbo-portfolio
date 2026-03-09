@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import "./CtaButton.css";
 
 const VARIANT_CLASS_MAP = {
   accent: "",

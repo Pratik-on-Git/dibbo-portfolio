@@ -1,0 +1,28 @@
+.site-btn {
+  position: relative;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45em 1em 0.72em;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: top;
+  background-color: var(--color-accent);
+}
+
+.site-btn a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Rolf', 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1;
+}
