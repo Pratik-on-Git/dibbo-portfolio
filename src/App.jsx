@@ -23,7 +23,7 @@ function AppContent() {
   const isDarkMenu = location.pathname === "/updates";
 
   const pageTitles = {
-    "/": "About Us | Balanced Pitch | CG MWT NOV 2024",
+    "/": "Dibbo | Portfolio",
     "/home": "Dibbo | Portfolio",
     "/about": "About Us | Balanced Pitch | CG MWT NOV 2024",
     "/solutions": "Solutions | Balanced Pitch | CG MWT NOV 2024",

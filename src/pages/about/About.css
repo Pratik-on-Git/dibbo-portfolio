@@ -145,6 +145,7 @@
 
 .about-us-col:nth-child(2) h3 {
   font-size: 4.5vw;
+  color: var(--color-secondary);
   font-weight: 300;
   margin-bottom: 0.55em;
   line-height: 1.5;

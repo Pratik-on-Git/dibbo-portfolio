@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent: #e61e32;
+  --color-accent: #FFAA00;
+  --color-secondary: #237227;
+  --color-secondary-light: #519A66;
+  --color-light-secondary: #E5F2E9;
   --color-light: #ffffff;
   --color-dark: #1d1d1d;
   --font-rolf: "Rolf", "DM Sans", sans-serif;
