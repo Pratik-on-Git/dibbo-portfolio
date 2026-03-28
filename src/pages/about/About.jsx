@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import Footer from "../../components/Footer/Footer";
 import Transition from "../../components/Transition/Transition";
 import ParallaxImage from "../../components/ParallaxImage/ParallaxImage";
+import ParallaxVideo from "../../components/ParallaxVideo/ParallaxVideo";
 import CtaButton from "../../components/Button/CtaButton";
 import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
 import "./About.css";
@@ -187,11 +188,13 @@ const About = () => {
           <div className="about-us-col">
             <div className="sign-up-card">
               <div className="sign-up-img">
-                <video
+                <ParallaxVideo
                   ref={signUpVideoRef}
                   className="sign-up-video"
                   preload="metadata"
                   playsInline
+                  speed={0.16}
+                  scale={1.25}
                   poster={`https://res.cloudinary.com/dhojmgqcy/video/upload/so_${signUpVideoPreviewPercent}p/v1774681684/Fusion_Guitar_Improvisation_1080P_h4gwuv.jpg`}
                   onLoadedMetadata={handleSignUpVideoMetadata}
                 >
@@ -199,7 +202,7 @@ const About = () => {
                     src="https://res.cloudinary.com/dhojmgqcy/video/upload/v1774681684/Fusion_Guitar_Improvisation_1080P_h4gwuv.mp4"
                     type="video/mp4"
                   />
-                </video>
+                </ParallaxVideo>
                 <button
                   type="button"
                   className="sign-up-video-toggle"

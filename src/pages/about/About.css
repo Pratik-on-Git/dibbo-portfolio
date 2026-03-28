@@ -519,6 +519,10 @@ section.team {
 }
 
 @media (max-width: 900px) {
+  .page.about .solutions-hero-img .about-hero-image {
+    object-position: 20% center;
+  }
+
   .page.about .solutions-hero-header.about-hero-header h1 {
     font-size: 50vw;
     padding-top: 0;

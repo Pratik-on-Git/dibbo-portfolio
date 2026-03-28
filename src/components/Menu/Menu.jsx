@@ -15,6 +15,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
   const menuBgRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
+  const isAboutRoute = location.pathname === "/" || location.pathname === "/about";
   const navigationTimeoutRef = useRef(null);
 
   useEffect(() => {
@@ -178,7 +179,7 @@ const Menu = ({ isOpen, setIsOpen, isDark }) => {
   };
 
   return (
-    <div className={`menu ${isDark ? "dark" : ""}`}>
+    <div className={`menu ${isDark ? "dark" : ""} ${isAboutRoute ? "about-logo-shadow" : ""}`}>
       <div className="menu-bar">
         <div className="logo">
           <Link to="/" onClick={handleNavigation("/")}>
