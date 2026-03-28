@@ -22,7 +22,7 @@
 .menu-bar p {
   text-decoration: none;
   text-transform: uppercase;
-  color: var(--color-secondary);
+  color: var(--color-accent);
   font-family: 'Rolf';
   font-size: 36px;
   font-weight: 300;

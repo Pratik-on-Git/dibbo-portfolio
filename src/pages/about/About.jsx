@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import Footer from "../../components/Footer/Footer";
 import Transition from "../../components/Transition/Transition";
@@ -11,6 +11,10 @@ import { animateAdvancedFadeIn, animateSimpleReveal } from "../../utils/animateT
 
 const About = () => {
   const pageRef = useRef(null);
+  const signUpVideoRef = useRef(null);
+  const didSeekSignUpPreviewRef = useRef(false);
+  const [isSignUpVideoPlaying, setIsSignUpVideoPlaying] = useState(false);
+  const signUpVideoPreviewPercent = 15;
 
   useEffect(() => {
     const page = pageRef.current;
@@ -109,6 +113,57 @@ const About = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const video = signUpVideoRef.current;
+    if (!video) return;
+
+    video.volume = 1;
+
+    const handlePlay = () => setIsSignUpVideoPlaying(true);
+    const handlePause = () => setIsSignUpVideoPlaying(false);
+
+    video.addEventListener("play", handlePlay);
+    video.addEventListener("pause", handlePause);
+    video.addEventListener("ended", handlePause);
+
+    return () => {
+      video.removeEventListener("play", handlePlay);
+      video.removeEventListener("pause", handlePause);
+      video.removeEventListener("ended", handlePause);
+    };
+  }, []);
+
+  const toggleSignUpVideoPlayback = async () => {
+    const video = signUpVideoRef.current;
+    if (!video) return;
+
+    video.volume = 1;
+
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch {
+        setIsSignUpVideoPlaying(false);
+      }
+      return;
+    }
+
+    video.pause();
+  };
+
+  const handleSignUpVideoMetadata = (event) => {
+    const video = event.currentTarget;
+    video.volume = 1;
+
+    if (didSeekSignUpPreviewRef.current) return;
+
+    if (Number.isFinite(video.duration) && video.duration > 0) {
+      didSeekSignUpPreviewRef.current = true;
+      video.currentTime = (video.duration * signUpVideoPreviewPercent) / 100;
+      video.pause();
+    }
+  };
+
   return (
     <div className="page about" ref={pageRef}>
         <section className="solutions-hero about-hero">
@@ -132,7 +187,38 @@ const About = () => {
           <div className="about-us-col">
             <div className="sign-up-card">
               <div className="sign-up-img">
-                <ParallaxImage src="/about/sign-up-card.jpg" alt="" />
+                <video
+                  ref={signUpVideoRef}
+                  className="sign-up-video"
+                  preload="metadata"
+                  playsInline
+                  poster={`https://res.cloudinary.com/dhojmgqcy/video/upload/so_${signUpVideoPreviewPercent}p/v1774681684/Fusion_Guitar_Improvisation_1080P_h4gwuv.jpg`}
+                  onLoadedMetadata={handleSignUpVideoMetadata}
+                >
+                  <source
+                    src="https://res.cloudinary.com/dhojmgqcy/video/upload/v1774681684/Fusion_Guitar_Improvisation_1080P_h4gwuv.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <button
+                  type="button"
+                  className="sign-up-video-toggle"
+                  onClick={toggleSignUpVideoPlayback}
+                  aria-label={isSignUpVideoPlaying ? "Pause video" : "Play video"}
+                >
+                  <span className="sign-up-video-toggle-icon" aria-hidden="true">
+                    {isSignUpVideoPlaying ? (
+                      <svg viewBox="0 0 24 24" role="presentation">
+                        <rect x="6" y="5" width="4" height="14" rx="1" />
+                        <rect x="14" y="5" width="4" height="14" rx="1" />
+                      </svg>
+                    ) : (
+                      <svg viewBox="0 0 24 24" role="presentation">
+                        <path d="M8 5.5v13l10-6.5z" />
+                      </svg>
+                    )}
+                  </span>
+                </button>
               </div>
               <div className="sign-up-card-header">
                 <h3>
