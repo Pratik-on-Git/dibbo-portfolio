@@ -365,7 +365,7 @@ const About = () => {
                     preload="metadata"
                     playsInline
                     speed={0.1}
-                    scale={1.5}
+                    scale={1}
                     onPlay={() => setTeamVideoPlaybackState(0, true)}
                     onPause={() => setTeamVideoPlaybackState(0, false)}
                     onEnded={() => setTeamVideoPlaybackState(0, false)}
@@ -398,7 +398,7 @@ const About = () => {
                     preload="metadata"
                     playsInline
                     speed={0.1}
-                    scale={1.5}
+                    scale={1}
                     onPlay={() => setTeamVideoPlaybackState(1, true)}
                     onPause={() => setTeamVideoPlaybackState(1, false)}
                     onEnded={() => setTeamVideoPlaybackState(1, false)}
@@ -432,7 +432,7 @@ const About = () => {
                     preload="metadata"
                     playsInline
                     speed={0.1}
-                    scale={1.5}
+                    scale={1}
                     onPlay={() => setTeamVideoPlaybackState(2, true)}
                     onPause={() => setTeamVideoPlaybackState(2, false)}
                     onEnded={() => setTeamVideoPlaybackState(2, false)}
@@ -464,7 +464,7 @@ const About = () => {
                     preload="metadata"
                     playsInline
                     speed={0.1}
-                    scale={1.5}
+                    scale={1}
                     onPlay={() => setTeamVideoPlaybackState(3, true)}
                     onPause={() => setTeamVideoPlaybackState(3, false)}
                     onEnded={() => setTeamVideoPlaybackState(3, false)}
