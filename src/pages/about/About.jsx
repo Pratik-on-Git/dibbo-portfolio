@@ -10,11 +10,22 @@ import "./About.css";
 import animateTextReveal from "../../utils/animateTextReveal";
 import { animateAdvancedFadeIn, animateSimpleReveal } from "../../utils/animateTextReveal";
 
+const TEAM_VIDEO_SOURCES = [
+  "https://res.cloudinary.com/dhojmgqcy/video/upload/v1774770458/Sequence_01_1_jhhw97.mp4",
+  "https://res.cloudinary.com/dhojmgqcy/video/upload/v1774770454/webber_4_ggvcn0.mp4",
+  "https://res.cloudinary.com/dhojmgqcy/video/upload/v1774770451/webber_qhhics.mp4",
+  "https://res.cloudinary.com/dhojmgqcy/video/upload/v1774770445/webber_4_1_sn9aik.mp4",
+];
+
 const About = () => {
   const pageRef = useRef(null);
   const signUpVideoRef = useRef(null);
+  const teamVideoRefs = useRef([]);
   const didSeekSignUpPreviewRef = useRef(false);
   const [isSignUpVideoPlaying, setIsSignUpVideoPlaying] = useState(false);
+  const [isTeamVideoPlaying, setIsTeamVideoPlaying] = useState(() =>
+    TEAM_VIDEO_SOURCES.map(() => false)
+  );
   const signUpVideoPreviewPercent = 15;
 
   useEffect(() => {
@@ -47,6 +58,14 @@ const About = () => {
     );
 
     // --- About Us section (scroll triggered) ---
+    const signUpCard = page.querySelector(".sign-up-card");
+    cleanups.push(
+      animateAdvancedFadeIn(signUpCard, {
+        start: "top 86%",
+        duration: 1.2,
+      })
+    );
+
     const signUpH3 = page.querySelector(".sign-up-card-header h3");
     cleanups.push(animateSimpleReveal(signUpH3));
 
@@ -165,6 +184,59 @@ const About = () => {
     }
   };
 
+  const setTeamVideoRef = (index) => (videoElement) => {
+    teamVideoRefs.current[index] = videoElement;
+  };
+
+  const setTeamVideoPlaybackState = (index, isPlaying) => {
+    setIsTeamVideoPlaying((prev) => {
+      if (prev[index] === isPlaying) return prev;
+      const next = [...prev];
+      next[index] = isPlaying;
+      return next;
+    });
+  };
+
+  const toggleTeamVideoPlayback = async (index) => {
+    const video = teamVideoRefs.current[index];
+    if (!video) return;
+
+    video.volume = 1;
+
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch {
+        setTeamVideoPlaybackState(index, false);
+      }
+      return;
+    }
+
+    video.pause();
+  };
+
+  const renderTeamVideoToggle = (index) => (
+    <button
+      type="button"
+      className="sign-up-video-toggle"
+      onClick={() => toggleTeamVideoPlayback(index)}
+      aria-label={isTeamVideoPlaying[index] ? "Pause video" : "Play video"}
+    >
+      <span className="sign-up-video-toggle-icon" aria-hidden="true">
+        {isTeamVideoPlaying[index] ? (
+          <svg viewBox="0 0 24 24" role="presentation">
+            <rect x="6" y="5" width="4" height="14" rx="1" />
+            <rect x="14" y="5" width="4" height="14" rx="1" />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24" role="presentation">
+            <path d="M8 5.5v13l10-6.5z" />
+          </svg>
+        )}
+      </span>
+    </button>
+  );
+
   return (
     <div className="page about" ref={pageRef}>
         <section className="solutions-hero about-hero">
@@ -193,8 +265,8 @@ const About = () => {
                   className="sign-up-video"
                   preload="metadata"
                   playsInline
-                  speed={0.16}
-                  scale={1.25}
+                  speed={0}
+                  scale={1}
                   poster={`https://res.cloudinary.com/dhojmgqcy/video/upload/so_${signUpVideoPreviewPercent}p/v1774681684/Fusion_Guitar_Improvisation_1080P_h4gwuv.jpg`}
                   onLoadedMetadata={handleSignUpVideoMetadata}
                 >
@@ -287,11 +359,20 @@ const About = () => {
             <div className="team-list-row">
               <div className="team-player">
                 <div className="player-img">
-                  <ParallaxImage
-                    src="/about/team1.jpg"
-                    alt="Team member 1"
+                  <ParallaxVideo
+                    ref={setTeamVideoRef(0)}
+                    className="team-player-video"
+                    preload="metadata"
+                    playsInline
                     speed={0.1}
-                  />
+                    scale={1.5}
+                    onPlay={() => setTeamVideoPlaybackState(0, true)}
+                    onPause={() => setTeamVideoPlaybackState(0, false)}
+                    onEnded={() => setTeamVideoPlaybackState(0, false)}
+                  >
+                    <source src={TEAM_VIDEO_SOURCES[0]} type="video/mp4" />
+                  </ParallaxVideo>
+                  {renderTeamVideoToggle(0)}
                 </div>
                 <div className="player-info">
                   <h3>Alex Morgan</h3>
@@ -311,11 +392,20 @@ const About = () => {
               </div>
               <div className="team-player">
                 <div className="player-img">
-                  <ParallaxImage
-                    src="/about/team2.jpg"
-                    alt="Team member 2"
+                  <ParallaxVideo
+                    ref={setTeamVideoRef(1)}
+                    className="team-player-video"
+                    preload="metadata"
+                    playsInline
                     speed={0.1}
-                  />
+                    scale={1.5}
+                    onPlay={() => setTeamVideoPlaybackState(1, true)}
+                    onPause={() => setTeamVideoPlaybackState(1, false)}
+                    onEnded={() => setTeamVideoPlaybackState(1, false)}
+                  >
+                    <source src={TEAM_VIDEO_SOURCES[1]} type="video/mp4" />
+                  </ParallaxVideo>
+                  {renderTeamVideoToggle(1)}
                 </div>
                 <div className="player-info">
                   <h3>Jordan Lee</h3>
@@ -336,11 +426,20 @@ const About = () => {
             <div className="team-list-row">
               <div className="team-player">
                 <div className="player-img">
-                  <ParallaxImage
-                    src="/about/team3.jpg"
-                    alt="Team member 3"
+                  <ParallaxVideo
+                    ref={setTeamVideoRef(2)}
+                    className="team-player-video"
+                    preload="metadata"
+                    playsInline
                     speed={0.1}
-                  />
+                    scale={1.5}
+                    onPlay={() => setTeamVideoPlaybackState(2, true)}
+                    onPause={() => setTeamVideoPlaybackState(2, false)}
+                    onEnded={() => setTeamVideoPlaybackState(2, false)}
+                  >
+                    <source src={TEAM_VIDEO_SOURCES[2]} type="video/mp4" />
+                  </ParallaxVideo>
+                  {renderTeamVideoToggle(2)}
                 </div>
                 <div className="player-info">
                   <h3>Samantha Grey</h3>
@@ -359,11 +458,20 @@ const About = () => {
               </div>
               <div className="team-player">
                 <div className="player-img">
-                  <ParallaxImage
-                    src="/about/team4.jpg"
-                    alt="Team member 4"
+                  <ParallaxVideo
+                    ref={setTeamVideoRef(3)}
+                    className="team-player-video"
+                    preload="metadata"
+                    playsInline
                     speed={0.1}
-                  />
+                    scale={1.5}
+                    onPlay={() => setTeamVideoPlaybackState(3, true)}
+                    onPause={() => setTeamVideoPlaybackState(3, false)}
+                    onEnded={() => setTeamVideoPlaybackState(3, false)}
+                  >
+                    <source src={TEAM_VIDEO_SOURCES[3]} type="video/mp4" />
+                  </ParallaxVideo>
+                  {renderTeamVideoToggle(3)}
                 </div>
                 <div className="player-info">
                   <h3>Riley Bennett</h3>
